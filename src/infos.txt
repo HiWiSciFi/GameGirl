@@ -1,0 +1,95 @@
+LedControl lcrs[3]
+byte displayBuffer[8*4*3 <>]
+
+byte displayBuffer[] = {
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+	B00000000,    B00000000,    B00000000,    B00000000
+};
+
+byte affectedRows[] = {
+	B00000000,
+	B00000000,
+	B00000000,
+	B00000000,
+
+	B00000000,
+	B00000000,
+	B00000000,
+	B00000000,
+
+	B00000000,
+	B00000000,
+	B00000000,
+	B00000000,
+};
+
+                            affectedRows[8]               affectedRows[9]              affectedRows[10]              affectedRows[11]
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+displayBuffer[3*i+r]    X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        
+                        
+                            affectedRows[4]               affectedRows[5]               affectedRows[6]               affectedRows[7]
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+displayBuffer[2*i+r]    X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        
+                        
+                            affectedRows[0]               affectedRows[1]               affectedRows[2]               affectedRows[3]
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+displayBuffer[1*i+r]    X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+                        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X        X  X  X  X  X  X  X  X
+(32*d)+(i*8)+r
+void setPixel(x, y, state):
+	displayRow = y/8
+	displayIndex = x/8
+
+	localY = y%8
+	localX = x%8
+
+	displayBufferIndex = ((displayRow+1)*displayIndex)+localY
+	currentRowVal = displayBuffer[displayBufferIndex]
+
+	if((currentRowVal >> localX) & B00000001 == state)
+		break
+	end
+end
