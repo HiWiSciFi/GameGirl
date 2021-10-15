@@ -100,7 +100,6 @@ void Display::update(bool writeFullBuffer) {
 				if (currentRowVal != B00000000) {
 					for (int r = 0; r < 8; r++) {
 						if (currentRowVal & (B00000001 << r)) {
-							Serial.print("-");
 							lcrs[d].setRow(i, r, displayBuffer[(32 * d) + (8 * i) + r]);
 						}
 					}
@@ -138,10 +137,5 @@ void Display::drawSprite(Sprite* sprite) {
 	for (int i = 0; i < lsize; i++) {
 		Pixel px = *(sprite->spriteData.get(i));
 		drawPixel(sprite->pos.x + px.pos.x, sprite->pos.y + px.pos.y, px.state);
-		Serial.print(sprite->pos.x + px.pos.x);
-		Serial.print(":");
-		Serial.print(sprite->pos.y + px.pos.y);
-		Serial.print(":");
-		Serial.println(px.state);
 	}
 }
