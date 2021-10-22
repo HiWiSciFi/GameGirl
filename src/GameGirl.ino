@@ -18,7 +18,7 @@ byte tetrominoL[] = {
 };
 
 void drawShape() {
-	Sprite* sprite = spriteFromArray(Position(15, 7), tetrominoL, 6, 4);
+	Sprite* sprite = spriteFromArray(Position(5, 5), tetrominoL, 6, 4);
 	Display::drawSprite(sprite);
 }
 
