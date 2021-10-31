@@ -9,7 +9,3 @@ Sprite::Sprite(Position _pos, List<Pixel> _data) {
 	pos = _pos;
 	spriteData = _data;
 }
-
-void Sprite::recalcBoundingBox() {
-
-}

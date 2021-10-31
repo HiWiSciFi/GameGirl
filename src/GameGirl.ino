@@ -17,6 +17,13 @@ byte tetrominoL[] = {
 	1, 1, 1, 1, 1, 1
 };
 
+byte tetrominoL_inv[] = {
+	2, 2, 1, 1, 1, 1,
+	2, 2, 1, 1, 1, 1,
+	2, 2, 2, 2, 2, 2,
+	2, 2, 2, 2, 2, 2
+};
+
 void drawShape() {
 	Sprite* sprite = spriteFromArray(Position(15, 7), tetrominoL, 6, 4);
 	Display::drawSprite(sprite);
